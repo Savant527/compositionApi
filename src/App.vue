@@ -1,16 +1,24 @@
+import UserRepositories from './components/UserRepositories.vue';
+
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <UserRepositories :user="'Diana'"></UserRepositories>
+  <Home first-name="Sebastian" last-name="Navas" otro="algo"></Home>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import UserRepositories from "./components/UserRepositories.vue";
+import Home from "@/components/Home.vue";
+import { provide } from "vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    UserRepositories,
+    Home,
   },
+  setup() {
+    provide("username", "Savant527");
+  }
 };
 </script>
 
